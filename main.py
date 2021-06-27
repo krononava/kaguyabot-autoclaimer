@@ -30,7 +30,7 @@ async def on_message(message):
 
             name = re.search(r'(https:\/\/myanimelist.net\/)(character\/)([A-Za-z0-9-]+\/)([A-Za-z0-9À-ȕ-_]+)', final[0])
             
-            if (title == 'A wild Waifu/Husbando appears!' and message.author.id == 727954884028268545):
+            if (title == 'A wild Waifu/Husbando appears!' and message.author.id == 727954884028268545 and message.guild.id != 727943425374290001):
                 await message.channel.send("k.claim " + name.group(4).replace("_", " "))
                 print(Fore.GREEN +"Claimed!")
                 print(Style.RESET_ALL)
