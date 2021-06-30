@@ -4,6 +4,7 @@ import re
 from colorama import Fore, Style
 import os
 from requests_html import HTMLSession
+import convertapi
 
 client = discord.Client()
 @client.event
@@ -20,6 +21,11 @@ async def on_message(message):
             pimage = kimage.get('image')
             imagePath = pimage.get('url')
             googlePath = 'https://www.google.com/searchbyimage?image_url='
+
+            if imagePath.lower().endswith('.gif'):
+                convertapi.api_secret = 'NybuvyXuLf0cuJQt'
+                imagePath = convertapi.convert('jpg', { 'File': imagePath })
+
             url = googlePath + imagePath + "&as_sitesearch=myanimelist.net"
 
             session = HTMLSession()
