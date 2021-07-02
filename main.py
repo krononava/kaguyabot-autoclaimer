@@ -26,7 +26,7 @@ async def on_message(message):
                 convertapi.api_secret = 'NybuvyXuLf0cuJQt'
                 imagePath = convertapi.convert('jpg', { 'File': imagePath })
 
-            url = googlePath + imagePath + "&as_sitesearch=myanimelist.net"
+            url = googlePath + str(imagePath) + "&as_sitesearch=myanimelist.net"
 
             session = HTMLSession()
             r = session.get(url)
