@@ -22,9 +22,9 @@ async def on_message(message):
             imagePath = pimage.get('url')
             googlePath = 'https://www.google.com/searchbyimage?image_url='
 
-            if imagePath.lower().endswith('.gif'):
-                convertapi.api_secret = 'NybuvyXuLf0cuJQt'
-                imagePath = convertapi.convert('jpg', { 'File': imagePath })
+            #if imagePath.lower().endswith('.gif'):
+            #    convertapi.api_secret = 'NybuvyXuLf0cuJQt'
+            #    imagePath = convertapi.convert('jpg', { 'File': imagePath })
 
             url = googlePath + str(imagePath) + "&as_sitesearch=myanimelist.net"
 
